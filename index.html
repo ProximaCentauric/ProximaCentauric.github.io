@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Matthew Landon, ML and AI Engineer</title>
+<meta name="description" content="Matthew Landon is an MS Artificial Intelligence student at RIT building ML systems for space science, automation and fintech. Open to full-time roles from May 2027.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F0FB; --surface:#FFFFFF; --ink:#16133F; --muted:#55527A; --line:#D9D5F0;
+  --cobalt:#3B2BFF; --pink:#E8386F; --amber:#C98600; --green:#0B8F6A; --violet:#7A3FE0;
+  --on-accent:#FFFFFF; color-scheme:light;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#12102B; --surface:#1B1840; --ink:#F1EFFF; --muted:#B0ACD6; --line:#2F2B63;
+    --cobalt:#8F86FF; --pink:#FF7AA2; --amber:#FFC247; --green:#3FD6A6; --violet:#B58CFF;
+    --on-accent:#12102B; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#12102B; --surface:#1B1840; --ink:#F1EFFF; --muted:#B0ACD6; --line:#2F2B63;
+  --cobalt:#8F86FF; --pink:#FF7AA2; --amber:#FFC247; --green:#3FD6A6; --violet:#B58CFF;
+  --on-accent:#12102B; color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 "Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Bricolage Grotesque","Hanken Grotesk",system-ui,sans-serif;margin:0;line-height:1.05;letter-spacing:-.02em}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--cobalt);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+p{margin:0 0 1em;max-width:62ch}
+
+/* top bar */
+.bar{display:flex;justify-content:space-between;align-items:center;padding:22px 0;gap:16px;flex-wrap:wrap}
+.bar b{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:800;font-size:1.15rem;letter-spacing:-.01em}
+.bar nav{display:flex;gap:22px;font-weight:500;font-size:.98rem}
+.bar nav a{text-decoration:none;color:var(--muted)}
+.bar nav a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:5px}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding:36px 0 72px}
+.status{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:7px 16px 7px 12px;font-size:.95rem;font-weight:500;margin-bottom:26px}
+.status i{width:10px;height:10px;border-radius:50%;background:var(--green);display:block}
+h1{font-weight:800;font-size:clamp(2.5rem,6.4vw,4.7rem);margin-bottom:24px}
+.lede{font-size:1.2rem;color:var(--muted);margin-bottom:30px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-weight:700;padding:13px 22px;border-radius:10px;border:2px solid var(--ink)}
+.btn.main{background:var(--cobalt);border-color:var(--cobalt);color:var(--on-accent)}
+.btn:hover{transform:translateY(-2px)}
+.btn{transition:transform .15s}
+.net{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:22px;overflow:hidden;min-height:360px}
+.net canvas{display:block;width:100%;height:100%;position:absolute;inset:0}
+.net p{position:absolute;left:18px;right:18px;bottom:6px;margin:0;font-size:.85rem;color:var(--muted);max-width:none;background:linear-gradient(transparent,var(--surface) 40%);padding-top:18px}
+
+/* sections */
+section{padding:72px 0;border-top:1px solid var(--line)}
+h2{font-weight:800;font-size:clamp(1.9rem,4vw,2.8rem);margin-bottom:12px}
+.sub{color:var(--muted);margin-bottom:44px}
+
+/* projects */
+.proj{display:grid;grid-template-columns:minmax(150px,230px) 1fr;gap:12px 40px;padding:34px 0;border-top:1px solid var(--line)}
+.proj:first-of-type{border-top:0;padding-top:0}
+.stat{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:800;font-size:clamp(2.8rem,6vw,4.4rem);line-height:.95;letter-spacing:-.03em;color:var(--c)}
+.statl{font-size:.95rem;color:var(--muted);margin-top:8px;max-width:20ch}
+.proj h3{font-size:1.6rem;margin-bottom:6px}
+.venue{font-weight:700;color:var(--c);margin-bottom:12px;font-size:.98rem}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 0;padding:0;list-style:none}
+.tags li{border:1.5px solid var(--c);color:var(--ink);border-radius:999px;padding:3px 12px;font-size:.88rem;font-weight:500}
+
+/* experience */
+.job{display:grid;grid-template-columns:minmax(150px,230px) 1fr;gap:8px 40px;padding:28px 0;border-top:1px solid var(--line)}
+.job:first-of-type{border-top:0;padding-top:0}
+.job h3{font-size:1.35rem}
+.when{color:var(--muted);font-size:.95rem}
+.job ul{margin:0;padding-left:1.1em;max-width:64ch}
+.job li{margin-bottom:.6em}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.skills h3{font-size:1.2rem;margin-bottom:10px}
+.skills p{color:var(--muted);margin:0}
+
+/* about + edu */
+.two{display:grid;grid-template-columns:1.3fr 1fr;gap:56px}
+.edu div{padding:0 0 18px}
+.edu b{display:block}
+.edu span{color:var(--muted)}
+
+/* contact */
+.contact{background:var(--ink);color:var(--bg);border-radius:28px;padding:56px 40px;margin:72px 0 40px}
+.contact h2{color:var(--bg)}
+.contact p{color:var(--bg);opacity:.85}
+.mail{display:inline-block;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:800;font-size:clamp(1.4rem,4.2vw,2.6rem);letter-spacing:-.02em;color:var(--bg);text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:8px;text-decoration-color:var(--amber);word-break:break-all}
+.links{display:flex;gap:22px;margin-top:28px;flex-wrap:wrap;font-weight:700}
+footer{color:var(--muted);font-size:.9rem;padding-bottom:36px}
+
+@media (max-width:820px){
+  .hero{grid-template-columns:1fr;padding-bottom:48px}
+  .net{min-height:320px}
+  .proj,.job{grid-template-columns:1fr}
+  .skills{grid-template-columns:1fr}
+  .two{grid-template-columns:1fr;gap:36px}
+  .contact{padding:40px 24px}
+}
+@media (prefers-reduced-motion: reduce){.btn{transition:none}.btn:hover{transform:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="bar">
+    <b>Matthew Landon</b>
+    <nav aria-label="Sections">
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div>
+        <div class="status"><i></i>Open to full-time roles from May 2027</div>
+        <h1>I build ML systems for Mars rovers, solar flares, and the messy data in between.</h1>
+        <p class="lede">I’m an AI master’s student at RIT with a 4.00 GPA and a math background, looking for my first full-time ML or AI engineering role. I like problems where the model has to be right and also has to know when it might be wrong.</p>
+        <div class="btns">
+          <a class="btn main" href="mailto:mlandon395@gmail.com">Email me</a>
+          <a class="btn" href="https://github.com/ProximaCentauric" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/matthewllandon/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <div class="net" id="net">
+        <canvas id="cv" aria-label="Interactive illustration of a similarity network with five colored clusters" role="img"></canvas>
+        <p>Move your cursor over the network. This is the kind of similarity graph I used to find five groups of Hot Jupiters.</p>
+      </div>
+    </div>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <p class="sub">Research and engineering work, with the results that came out of it.</p>
+
+      <article class="proj" style="--c:var(--cobalt)">
+        <div><div class="stat">94%</div><div class="statl">mission completion with a 6% collision rate over 50 episodes</div></div>
+        <div>
+          <h3>Uncertainty-aware navigation for Mars rovers</h3>
+          <div class="venue">Submitted to NeurIPS 2026, RIT</div>
+          <p>A rover that loses contact with Earth has to decide alone. I designed a four-stage perception and planning system that turns terrain uncertainty into a real-time hazard map. A MobileNetV3-Small classifier supplies the uncertainty through MC Dropout (30 stochastic passes), which is blended with camera and LiDAR sensor fusion. Navigation runs in three layers: Theta* for global paths, a Double DQN agent for reactive driving, and D* Lite overrides when perception conflicts.</p>
+          <ul class="tags"><li>PyTorch</li><li>Reinforcement learning</li><li>Sensor fusion</li><li>Uncertainty estimation</li></ul>
+        </div>
+      </article>
+
+      <article class="proj" style="--c:var(--pink)">
+        <div><div class="stat">5</div><div class="statl">distinct Hot Jupiter subpopulations discovered</div></div>
+        <div>
+          <h3>Characterizing Hot Jupiters with network analysis</h3>
+          <div class="venue">Carnegie Science, under review. Presented at AGU24.</div>
+          <p>I built unsupervised network pipelines in R that connect exoplanets by cosine similarity across many properties and reveal groups nobody had defined by hand. To keep the findings honest, I applied Benjamini-Hochberg false discovery rate control to the metallicity-radius correlations. I also used Kruskal-Wallis tests to separate real physical differences from survey detection bias, and made the graphs interactive with visNetwork.</p>
+          <ul class="tags"><li>R</li><li>Network science</li><li>Statistical testing</li><li>Data visualization</li></ul>
+        </div>
+      </article>
+
+      <article class="proj" style="--c:var(--amber)">
+        <div><div class="stat">0.906</div><div class="statl">F1 score for C-class flares (Random Forest)</div></div>
+        <div>
+          <h3>Predicting solar flares: standard ML vs. Transformers</h3>
+          <div class="venue">RIT term project, December 2025</div>
+          <p>I benchmarked Random Forest, XGBoost, KNN and a custom Transformer-based CNN/LSTM (SolarFlareNet) on 120,000 training samples of NASA SDO/SHARP magnetogram time series. Every model reached operational-grade skill (TSS above 0.50), KNN hit an F1 of 0.883 on M-class flares, and all models ran inference in under 100 ms, fast enough for real-time use.</p>
+          <ul class="tags"><li>Time-series forecasting</li><li>XGBoost</li><li>Transformers</li><li>Model benchmarking</li></ul>
+        </div>
+      </article>
+
+      <article class="proj" style="--c:var(--green)">
+        <div><div class="stat">3,500+</div><div class="statl">planets scored for Earth similarity</div></div>
+        <div>
+          <h3>Exoplanet habitability index</h3>
+          <div class="venue">Haverford College, 2024</div>
+          <p>I built supervised PCA/SVD-based models that predict the Earth Similarity Index across more than 3,500 planets. It grew into my senior thesis on the independence and survivability of space habitats, using ML optimization and differential equations.</p>
+          <ul class="tags"><li>Supervised learning</li><li>PCA and SVD</li><li>Differential equations</li></ul>
+        </div>
+      </article>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <p class="sub">Industry work and ongoing research.</p>
+
+      <div class="job">
+        <div><h3>AI Engineer Intern</h3><div class="when">Nixacom AI, remote<br>Feb 2026 to present</div></div>
+        <ul>
+          <li>Architected a modular frontend and backend freight Request for Quote engine, with production Python and Java data pipelines that automate asset-verification workflows.</li>
+          <li>Engineered computer vision pipelines (YOLOv8, OpenCV) that segment and ingest unstructured media streams and feed a real-time recipe generation engine.</li>
+          <li>Built procurement scrapers with the Google Apps Script CLI that process corporate and government RFPs and compile vendor proposals in standard TSU format.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div><h3>EPIIC Research Intern</h3><div class="when">Carnegie Science Earth and Planets Laboratory, Washington, D.C.<br>Jun 2024 to present</div></div>
+        <ul>
+          <li>Developed unsupervised network machine learning pipelines in R that map multidimensional exoplanet similarity graphs and surface five subpopulations.</li>
+          <li>Used high-dimensional regression with false discovery rate correction to isolate statistically valid stellar metallicity and radius correlations.</li>
+          <li>Quantified survey detection bias to separate physical anomalies from observational selection effects.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <p class="sub">The tools I reach for most.</p>
+      <div class="skills">
+        <div><h3>Machine learning</h3><p>PyTorch, TensorFlow, computer vision (YOLOv8, OpenCV, ResNet), deep reinforcement learning, NLP, time-series forecasting, network graph science, uncertainty estimation</p></div>
+        <div><h3>Languages and data</h3><p>Python, Java, JavaScript, R, SQL, PySpark, MATLAB, FastAPI, Flask, Node.js, Git, LaTeX</p></div>
+        <div><h3>Cloud and infrastructure</h3><p>AWS (EC2, S3), Docker, REST APIs, Linux, Jupyter, Google Apps Script CLI</p></div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="two">
+        <div>
+          <h2>About</h2>
+          <p>My path into AI ran through applied mathematics, so I care about why a model works and not only whether it scores well. That shows up in how I work: uncertainty estimates, statistical error control, and checks for bias in the data.</p>
+          <p>Most of my projects come from space science, and the same habits carry over to fintech and automation, which is what I do at Nixacom AI. I’m graduating in May 2027 and want to join a team that ships ML into real use.</p>
+        </div>
+        <div class="edu">
+          <h2>Education</h2>
+          <div><b>M.S. in Artificial Intelligence</b><span>Rochester Institute of Technology<br>GPA 4.00, expected May 2027</span></div>
+          <div><b>B.S. in Applied Mathematics</b><span>Haverford College<br>GPA 3.85, May 2025</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" style="border-top:0;padding:0">
+      <div class="contact">
+        <h2>Let’s talk about your team.</h2>
+        <p>I’m interviewing for full-time ML, AI and data roles starting May 2027. The fastest way to reach me is email.</p>
+        <a class="mail" href="mailto:mlandon395@gmail.com">mlandon395@gmail.com</a>
+        <div class="links">
+          <a href="https://github.com/ProximaCentauric" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/matthewllandon/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>© 2026 Matthew Landon</footer>
+</div>
+
+<script>
+(function(){
+  var cv=document.getElementById('cv'), box=document.getElementById('net'), ctx=cv.getContext('2d');
+  var cols=['#3B2BFF','#E8386F','#E0A100','#12B886','#8A4DFF'];
+  var centers=[[.24,.28],[.72,.24],[.5,.52],[.24,.74],[.76,.72]];
+  var nodes=[], W=0,H=0, mouse={x:-999,y:-999}, dpr=Math.min(window.devicePixelRatio||1,2);
+  var still=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var seed=7; function rnd(){seed=(seed*16807)%2147483647;return (seed-1)/2147483646}
+  centers.forEach(function(c,ci){
+    for(var i=0;i<15;i++){
+      var a=rnd()*6.283, r=.02+rnd()*.12;
+      nodes.push({c:ci,bx:c[0]+Math.cos(a)*r,by:c[1]+Math.sin(a)*r*1.1,ph:rnd()*6.283,sp:.4+rnd()*.5,am:.006+rnd()*.012,ox:0,oy:0,s:2.6+rnd()*2.4});
+    }
+  });
+  function size(){
+    var r=box.getBoundingClientRect(); W=r.width; H=r.height;
+    cv.width=W*dpr; cv.height=H*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
+  }
+  function inkColor(){return getComputedStyle(document.documentElement).getPropertyValue('--ink').trim()||'#16133F'}
+  function draw(t){
+    ctx.clearRect(0,0,W,H);
+    var ink=inkColor(), i,j,n,m;
+    for(i=0;i<nodes.length;i++){
+      n=nodes[i];
+      var px=(n.bx+Math.sin(t*n.sp+n.ph)*n.am)*W, py=(n.by+Math.cos(t*n.sp*.8+n.ph)*n.am)*H;
+      var dx=px-mouse.x, dy=py-mouse.y, d=Math.sqrt(dx*dx+dy*dy);
+      var tx=0,ty=0;
+      if(d<110&&d>0){var f=(110-d)/110*26; tx=dx/d*f; ty=dy/d*f;}
+      n.ox+=(tx-n.ox)*.12; n.oy+=(ty-n.oy)*.12;
+      n.x=px+n.ox; n.y=py+n.oy; n.d=d;
+    }
+    ctx.lineWidth=1;
+    for(i=0;i<nodes.length;i++){
+      for(j=i+1;j<nodes.length;j++){
+        n=nodes[i]; m=nodes[j];
+        if(n.c!==m.c) continue;
+        var ddx=n.x-m.x, ddy=n.y-m.y, dd=Math.sqrt(ddx*ddx+ddy*ddy);
+        if(dd<W*.2){
+          var near=(n.d<130||m.d<130);
+          ctx.globalAlpha=near?.75:.28; ctx.strokeStyle=cols[n.c];
+          ctx.beginPath(); ctx.moveTo(n.x,n.y); ctx.lineTo(m.x,m.y); ctx.stroke();
+        }
+      }
+    }
+    ctx.globalAlpha=1;
+    for(i=0;i<nodes.length;i++){
+      n=nodes[i];
+      ctx.fillStyle=cols[n.c];
+      ctx.beginPath(); ctx.arc(n.x,n.y,n.s*(n.d<110?1.35:1),0,6.283); ctx.fill();
+    }
+    ctx.globalAlpha=.9; ctx.fillStyle=ink;
+    for(i=0;i<5;i++){ /* cluster cores */
+      var cx=centers[i][0]*W, cy=centers[i][1]*H;
+      ctx.beginPath(); ctx.arc(cx,cy,2,0,6.283); ctx.fill();
+    }
+    ctx.globalAlpha=1;
+  }
+  function loop(ms){draw(ms/1000); if(!still) requestAnimationFrame(loop)}
+  function move(e){var r=box.getBoundingClientRect(); var p=e.touches?e.touches[0]:e; mouse.x=p.clientX-r.left; mouse.y=p.clientY-r.top; if(still) draw(0)}
+  function leave(){mouse.x=mouse.y=-999; if(still) draw(0)}
+  box.addEventListener('mousemove',move); box.addEventListener('mouseleave',leave);
+  box.addEventListener('touchmove',move,{passive:true}); box.addEventListener('touchend',leave);
+  window.addEventListener('resize',function(){size(); if(still) draw(0)});
+  size(); requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>
